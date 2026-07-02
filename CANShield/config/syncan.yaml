@@ -1,0 +1,78 @@
+dataset_name : syncan
+backend : torch
+data_type : training # testing (override)
+eval_type : original
+root_dir: 'none' # Dummy value, will be assigned dynamically
+data_dir: 'none' # Dummy value, will be assigned dynamically
+train_data_dir: ../../../data_raw/01_SynCAN/ambient
+test_data_dir: ../../../data_raw/01_SynCAN/attacks
+scaler_dir: ../scaler/
+org_columns : ['Label', 'Time', 'ID',  'Signal1_of_ID',  'Signal2_of_ID',  'Signal3_of_ID',  'Signal4_of_ID']
+features : ['Sig_1_of_ID_2',
+        'Sig_1_of_ID_7',
+        'Sig_2_of_ID_3',
+        'Sig_1_of_ID_10',
+        'Sig_1_of_ID_9',
+        'Sig_1_of_ID_1',
+        'Sig_4_of_ID_10',
+        'Sig_2_of_ID_2',
+        'Sig_3_of_ID_10',
+        'Sig_1_of_ID_6',
+        'Sig_2_of_ID_5',
+        'Sig_1_of_ID_4',
+        'Sig_1_of_ID_5',
+        'Sig_3_of_ID_2',
+        'Sig_1_of_ID_8',
+        'Sig_2_of_ID_6',
+        'Sig_2_of_ID_10',
+        'Sig_2_of_ID_7',
+        'Sig_2_of_ID_1',
+        'Sig_1_of_ID_3']
+
+num_signals: 20
+per_of_samples: 1.00 # <= 1.00, 1.00 means evaluation on 100% of data points, Can be set to higher value to speed up the valuation
+max_epoch: 500
+
+time_steps: [50] # For complete evaluation use [25, 50, 75, 100]
+time_step: 50 # Dummy value, will be assigned dynamically
+
+sampling_periods: [1, 5, 10] # For complete evaluation use [1, 5, 10, 20, 50]
+sampling_period : 1 # Dummy value, will be assigned dynamically
+
+window_step : -1 # Place holder (will be asigned dynamically) Can be set to higher value to speed up the valuation
+window_step_train: 10 # Can be set to higher value to speed up the valuation
+window_step_valid : 10 # Can be set to higher value to speed up the valuation
+window_step_test : 10 #10 # Can be set to higher value to speed up the valuation
+
+# Input-pipeline debugging toggles
+debug_input_pipeline: false
+debug_outputs: false
+debug_output_suffix: debug
+debug_max_files: 0
+debug_plot_num_signals: 6
+debug_plot_num_points: 20000
+debug_plot_window_index: -1  # -1 = auto-select highest-variance window
+
+
+# For testing/evluation 
+## (To generate the results)
+loss_factors : [95]
+time_factors : [99]
+signal_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
+
+## (To generate complete grid search)
+# loss_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
+# time_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
+# signal_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
+
+
+loss_factor : 95 # Dummy value, will be assigned dynamically
+time_factor : 99 # Dummy value, will be assigned dynamically
+
+attacks_dict : {
+        'Flooding': 'test_flooding',
+        'Suppress': 'test_suppress',
+        'Plateau': 'test_plateau',
+        'Continuous': 'test_continuous',
+        'Playback': 'test_playback',
+        }

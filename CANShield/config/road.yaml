@@ -1,0 +1,91 @@
+dataset_name : road
+backend : torch
+data_type : training # testing (override)
+eval_type : original
+root_dir: 'none' # Dummy value, will be assigned dynamically
+data_dir: 'none' # Dummy value, will be assigned dynamically
+train_data_dir: ../../../data_raw/02_Road_cleaned/signal_extractions/ambient
+test_data_dir: ../../../data_raw/02_Road_cleaned/signal_extractions/attacks
+scaler_dir: ../scaler/
+org_columns : ['Label', 'Time', 'ID',
+        'Signal_1_of_ID', 'Signal_2_of_ID', 'Signal_3_of_ID', 'Signal_4_of_ID', 'Signal_5_of_ID', 'Signal_6_of_ID',
+        'Signal_7_of_ID', 'Signal_8_of_ID', 'Signal_9_of_ID', 'Signal_10_of_ID', 'Signal_11_of_ID', 'Signal_12_of_ID',
+        'Signal_13_of_ID', 'Signal_14_of_ID', 'Signal_15_of_ID', 'Signal_16_of_ID', 'Signal_17_of_ID', 'Signal_18_of_ID',
+        'Signal_19_of_ID', 'Signal_20_of_ID', 'Signal_21_of_ID', 'Signal_22_of_ID']
+
+features : [
+        'Sig_2_of_ID_676',
+        'Sig_4_of_ID_676',
+        'Sig_2_of_ID_1255',
+        'Sig_3_of_ID_208',
+        'Sig_2_of_ID_354',
+        'Sig_6_of_ID_1505',
+        'Sig_3_of_ID_14',
+        'Sig_4_of_ID_1788',
+        'Sig_4_of_ID_1314',
+        'Sig_1_of_ID_1314',
+        'Sig_2_of_ID_560',
+        'Sig_1_of_ID_167',
+        'Sig_4_of_ID_1124',
+        'Sig_4_of_ID_339',
+        'Sig_13_of_ID_339',
+        'Sig_1_of_ID_852',
+        'Sig_1_of_ID_14',
+        'Sig_5_of_ID_1076',
+        'Sig_4_of_ID_1076',
+        'Sig_2_of_ID_1076',
+        'Sig_3_of_ID_1076',
+        'Sig_1_of_ID_354',
+        'Sig_1_of_ID_51',
+        'Sig_3_of_ID_51',
+        'Sig_7_of_ID_1788',
+        'Sig_4_of_ID_1760',
+        'Sig_3_of_ID_1760',
+        'Sig_4_of_ID_1176',
+        'Sig_6_of_ID_208',
+        'Sig_1_of_ID_1760',
+        'Sig_2_of_ID_526',
+        'Sig_2_of_ID_1760',
+        'Sig_5_of_ID_1277',
+        'Sig_7_of_ID_167',
+        'Sig_8_of_ID_1277',
+        'Sig_3_of_ID_1277',
+        'Sig_6_of_ID_1277'
+]
+
+
+num_signals: 37
+train_only_benign: true
+per_of_samples: 1.00
+max_epoch: 500
+
+time_steps: [50]
+time_step: 50 # Dummy value, will be assigned dynamically
+
+sampling_periods: [1, 5, 10]
+sampling_period : 1 # Dummy value, will be assigned dynamically
+
+window_step : -1 # Place holder (will be asigned dynamically)
+window_step_train: 10
+window_step_valid : 10
+window_step_test : 10
+
+# Input-pipeline debugging toggles
+debug_input_pipeline: false
+debug_outputs: false
+debug_output_suffix: debug
+debug_max_files: 0
+debug_plot_num_signals: 6
+# 300 rows is ~0.05ms of an interleaved multi-ID CAN timeline — too short to see variation.
+# 20000 rows covers ~1-2 seconds and gives each selected signal hundreds of updates.
+debug_plot_num_points: 20000
+debug_plot_window_index: -1  # -1 = auto-select highest-variance window
+
+loss_factors : [95]
+time_factors : [99]
+signal_factors : [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 99.5, 99.99]
+
+loss_factor : 95 # Dummy value, will be assigned dynamically
+time_factor : 99 # Dummy value, will be assigned dynamically
+
+attacks_dict : {}

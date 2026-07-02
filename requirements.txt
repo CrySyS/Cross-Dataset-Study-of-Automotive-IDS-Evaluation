@@ -1,0 +1,17 @@
+
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.5
+scikit-learn>=1.1
+pyarrow>=9.0
+fastparquet>=2023.11.0
+rich>=13.0.0  
+pytorch-tcn>=1.2.3
+
+tensorflow>=2.10.0
+keras-tcn>=3.5.0
+
+bitstring>=4.0.0
+tables>=3.8.0  
+
+onnxruntime>=1.14.1 

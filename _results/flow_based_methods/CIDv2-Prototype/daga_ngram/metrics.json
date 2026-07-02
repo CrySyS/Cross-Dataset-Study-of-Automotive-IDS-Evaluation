@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "method": "daga_ngram",
+    "dataset_tag": "CIDv2_Prototype_all",
+    "n_train_rows": 343647,
+    "n_test_rows": 327303,
+    "supports_message_eval": true,
+    "supports_window_eval": true,
+    "binary_method": true,
+    "evaluation_strategy": "both_levels",
+    "paper_dataset": "DAGA_STABILI2022",
+    "window_config": null,
+    "window_labeling_strategy": "any_attack",
+    "method_parameters": {
+      "params": {
+        "n": 6,
+        "id_remap": true,
+        "window_seconds": 0.5,
+        "stride_seconds": 0.5,
+        "window_score": "any",
+        "keep_unmap": false
+      }
+    },
+    "n_test_windows": 993,
+    "n_test_windows_attack": 215,
+    "n_test_windows_benign": 778,
+    "score_unit_window": "window",
+    "confusion_unit_window": "window",
+    "label_semantics_window": {
+      "0": "benign window",
+      "1": "attack window"
+    },
+    "n_test_messages": 327303,
+    "n_test_messages_attack": 66256,
+    "n_test_messages_benign": 261047,
+    "score_unit_message": "message",
+    "confusion_unit_message": "message",
+    "label_semantics_message": {
+      "0": "benign message",
+      "1": "attack message"
+    }
+  },
+  "window_level": {
+    "roc_pr": null,
+    "roc_auc": null,
+    "thresholds": {},
+    "confusion_at_best_f1": {
+      "tn": 129,
+      "fp": 649,
+      "fn": 0,
+      "tp": 215,
+      "precision": 0.2488425925925926,
+      "recall": 1.0,
+      "f1": 0.3985171455050973,
+      "tpr": 1.0,
+      "fpr": 0.8341902313624678,
+      "tnr": 0.16580976863753213,
+      "fnr": 0.0
+    },
+    "balanced_accuracy": 0.5829048843187661,
+    "note": "Binary method: no threshold sweep or ROC.",
+    "per_attack_type": {
+      "Diagnostic": {
+        "n_total": 920,
+        "n_attack": 142,
+        "n_benign": 778,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 129,
+          "fp": 649,
+          "fn": 0,
+          "tp": 142,
+          "precision": 0.179519595448799,
+          "recall": 1.0,
+          "f1": 0.30439442658092175,
+          "tpr": 1.0,
+          "fpr": 0.8341902313624678,
+          "tnr": 0.16580976863753213,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.5829048843187661,
+        "interpretation": {
+          "n_messages_total": 920,
+          "n_messages_attack": 142,
+          "n_messages_benign": 778,
+          "n_predicted_attack": 791,
+          "n_predicted_benign": 129,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "DoS": {
+        "n_total": 799,
+        "n_attack": 21,
+        "n_benign": 778,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 129,
+          "fp": 649,
+          "fn": 0,
+          "tp": 21,
+          "precision": 0.03134328358208955,
+          "recall": 1.0,
+          "f1": 0.060781476121562955,
+          "tpr": 1.0,
+          "fpr": 0.8341902313624678,
+          "tnr": 0.16580976863753213,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.5829048843187661,
+        "interpretation": {
+          "n_messages_total": 799,
+          "n_messages_attack": 21,
+          "n_messages_benign": 778,
+          "n_predicted_attack": 670,
+          "n_predicted_benign": 129,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "FuzzyCANID": {
+        "n_total": 788,
+        "n_attack": 10,
+        "n_benign": 778,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 129,
+          "fp": 649,
+          "fn": 0,
+          "tp": 10,
+          "precision": 0.015174506828528073,
+          "recall": 1.0,
+          "f1": 0.029895366218236172,
+          "tpr": 1.0,
+          "fpr": 0.8341902313624678,
+          "tnr": 0.16580976863753213,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.5829048843187661,
+        "interpretation": {
+          "n_messages_total": 788,
+          "n_messages_attack": 10,
+          "n_messages_benign": 778,
+          "n_predicted_attack": 659,
+          "n_predicted_benign": 129,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "SpoofingSpeedometer": {
+        "n_total": 799,
+        "n_attack": 21,
+        "n_benign": 778,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 129,
+          "fp": 649,
+          "fn": 0,
+          "tp": 21,
+          "precision": 0.03134328358208955,
+          "recall": 1.0,
+          "f1": 0.060781476121562955,
+          "tpr": 1.0,
+          "fpr": 0.8341902313624678,
+          "tnr": 0.16580976863753213,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.5829048843187661,
+        "interpretation": {
+          "n_messages_total": 799,
+          "n_messages_attack": 21,
+          "n_messages_benign": 778,
+          "n_predicted_attack": 670,
+          "n_predicted_benign": 129,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "Suspension": {
+        "n_total": 799,
+        "n_attack": 21,
+        "n_benign": 778,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 129,
+          "fp": 649,
+          "fn": 0,
+          "tp": 21,
+          "precision": 0.03134328358208955,
+          "recall": 1.0,
+          "f1": 0.060781476121562955,
+          "tpr": 1.0,
+          "fpr": 0.8341902313624678,
+          "tnr": 0.16580976863753213,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.5829048843187661,
+        "interpretation": {
+          "n_messages_total": 799,
+          "n_messages_attack": 21,
+          "n_messages_benign": 778,
+          "n_predicted_attack": 670,
+          "n_predicted_benign": 129,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      }
+    }
+  },
+  "message_level": {
+    "roc_pr": null,
+    "roc_auc": null,
+    "thresholds": {},
+    "confusion_at_binary_pred": {
+      "tn": 143176,
+      "fp": 117871,
+      "fn": 14667,
+      "tp": 51589,
+      "precision": 0.3044317243007199,
+      "recall": 0.7786313692344844,
+      "f1": 0.4377216650545572,
+      "tpr": 0.7786313692344844,
+      "fpr": 0.4515317165108199,
+      "tnr": 0.5484682834891801,
+      "fnr": 0.22136863076551558
+    },
+    "balanced_accuracy": 0.6635498263618322,
+    "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+    "interpretation": {
+      "n_messages_total": 327303,
+      "n_messages_attack": 66256,
+      "n_messages_benign": 261047,
+      "n_predicted_attack": 169460,
+      "n_predicted_benign": 157843,
+      "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+    },
+    "per_attack_type": {
+      "Diagnostic": {
+        "n_total": 261286,
+        "n_attack": 239,
+        "n_benign": 261047,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 143176,
+          "fp": 117871,
+          "fn": 0,
+          "tp": 239,
+          "precision": 0.002023537380408094,
+          "recall": 1.0,
+          "f1": 0.004038901891862204,
+          "tpr": 1.0,
+          "fpr": 0.4515317165108199,
+          "tnr": 0.5484682834891801,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.77423414174459,
+        "interpretation": {
+          "n_messages_total": 261286,
+          "n_messages_attack": 239,
+          "n_messages_benign": 261047,
+          "n_predicted_attack": 118110,
+          "n_predicted_benign": 143176,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "DoS": {
+        "n_total": 301084,
+        "n_attack": 40037,
+        "n_benign": 261047,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 143176,
+          "fp": 117871,
+          "fn": 0,
+          "tp": 40037,
+          "precision": 0.25354636877168985,
+          "recall": 1.0,
+          "f1": 0.4045265098891106,
+          "tpr": 1.0,
+          "fpr": 0.4515317165108199,
+          "tnr": 0.5484682834891801,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.77423414174459,
+        "interpretation": {
+          "n_messages_total": 301084,
+          "n_messages_attack": 40037,
+          "n_messages_benign": 261047,
+          "n_predicted_attack": 157908,
+          "n_predicted_benign": 143176,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "FuzzyCANID": {
+        "n_total": 261057,
+        "n_attack": 10,
+        "n_benign": 261047,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 143176,
+          "fp": 117871,
+          "fn": 0,
+          "tp": 10,
+          "precision": 8.483131293423029e-05,
+          "recall": 1.0,
+          "f1": 0.00016964823438600062,
+          "tpr": 1.0,
+          "fpr": 0.4515317165108199,
+          "tnr": 0.5484682834891801,
+          "fnr": 0.0
+        },
+        "balanced_accuracy": 0.77423414174459,
+        "interpretation": {
+          "n_messages_total": 261057,
+          "n_messages_attack": 10,
+          "n_messages_benign": 261047,
+          "n_predicted_attack": 117881,
+          "n_predicted_benign": 143176,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "SpoofingSpeedometer": {
+        "n_total": 283764,
+        "n_attack": 22717,
+        "n_benign": 261047,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 143176,
+          "fp": 117871,
+          "fn": 13958,
+          "tp": 8759,
+          "precision": 0.06917002290136619,
+          "recall": 0.38557027776555003,
+          "f1": 0.11729730091665719,
+          "tpr": 0.38557027776555003,
+          "fpr": 0.4515317165108199,
+          "tnr": 0.5484682834891801,
+          "fnr": 0.61442972223445
+        },
+        "balanced_accuracy": 0.4670192806273651,
+        "interpretation": {
+          "n_messages_total": 283764,
+          "n_messages_attack": 22717,
+          "n_messages_benign": 261047,
+          "n_predicted_attack": 126630,
+          "n_predicted_benign": 157134,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      },
+      "Suspension": {
+        "n_total": 264300,
+        "n_attack": 3253,
+        "n_benign": 261047,
+        "note": "Binary method: predictions are 0/1 per message, no threshold tuning.",
+        "roc_pr": null,
+        "roc_auc": null,
+        "thresholds": {},
+        "confusion_at_binary_pred": {
+          "tn": 143176,
+          "fp": 117871,
+          "fn": 709,
+          "tp": 2544,
+          "precision": 0.021126936012955195,
+          "recall": 0.7820473409160774,
+          "f1": 0.04114241355888346,
+          "tpr": 0.7820473409160774,
+          "fpr": 0.4515317165108199,
+          "tnr": 0.5484682834891801,
+          "fnr": 0.21795265908392253
+        },
+        "balanced_accuracy": 0.6652578122026287,
+        "interpretation": {
+          "n_messages_total": 264300,
+          "n_messages_attack": 3253,
+          "n_messages_benign": 261047,
+          "n_predicted_attack": 120415,
+          "n_predicted_benign": 143885,
+          "explanation": "Binary methods output hard 0/1 predictions. Message-level metrics show raw prediction quality. Low precision typically means many benign messages flagged as anomalous (high false positive rate at message granularity)."
+        }
+      }
+    }
+  }
+}
