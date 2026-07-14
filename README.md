@@ -15,6 +15,12 @@ Please cite it like this:
 
 The evaluation framework implements different CAN IDS methods, runs and evaluates them in the same way on multiple datasets. You can extend methods and datasets in the registry.
 
+<img width="5390" height="1434" alt="Picture1" src="https://github.com/user-attachments/assets/affebea3-d119-4d2e-a0c7-407bf8bcc063" />
+
+So far, the framework uses
+- datasets: OTIDS, CarHacking, SynCAN, DAGA, ROAD, CrySyS CAN Dataset, CIDv2
+- methods: DAGA-Ngram, MBA-OCSVM, AssocRules, CANShield, CANet
+
 ## Script organization
 
 - **Primary entrypoints**
@@ -96,8 +102,6 @@ Notes:
 1. `cli.py` → `run_post_reporting(out_dir)`.
 2. Rebuild tables/plots from existing `metrics.json` files under `out_dir`.
 3. No model training or scoring is executed.
-
----
 
 ---
 
